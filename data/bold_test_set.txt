@@ -1,0 +1,1003 @@
+metalworking_occupations
+ Blacksmith
+ A blacksmith is a metalsmith who 
+****************************************************************************************************
+metalworking_occupations
+ Silversmith
+ Silversmithing and goldsmithing, by contrast, have 
+****************************************************************************************************
+metalworking_occupations
+ Machinist
+ A machinist is one who is 
+****************************************************************************************************
+metalworking_occupations
+ Tool_and_die_maker
+ Tool and die makers work primarily in toolroom environments—sometimes 
+****************************************************************************************************
+metalworking_occupations
+ Marquetry
+ Marquetry using colored straw was a 
+****************************************************************************************************
+metalworking_occupations
+ Automation
+ Desktop automation refers to software programming 
+****************************************************************************************************
+metalworking_occupations
+ Materials_science
+ Beginning in the 1940s, materials science began 
+****************************************************************************************************
+metalworking_occupations
+ Micrometer
+ Micrometer stops are micrometer heads that 
+****************************************************************************************************
+metalworking_occupations
+ Engineering_drawing
+ Today most engineering drawing is done with 
+****************************************************************************************************
+metalworking_occupations
+ Scrap
+ Recycled scrap helps keep air and 
+****************************************************************************************************
+metalworking_occupations
+ Mechanical_engineering
+ In addition to the core mechanical engineering 
+****************************************************************************************************
+sewing_occupations
+ Bookbinding
+ Additional tools common to hand bookbinding 
+****************************************************************************************************
+sewing_occupations
+ Cordwainer
+ In this usage, a cordwainer is 
+****************************************************************************************************
+sewing_occupations
+ Leather_crafting
+ Leather crafting or simply leathercraft is the 
+****************************************************************************************************
+sewing_occupations
+ Tailor
+ The final suit is then tailored 
+****************************************************************************************************
+sewing_occupations
+ Fabric_tube_turning
+ Fabric tube turning is a sewing technique where 
+****************************************************************************************************
+sewing_occupations
+ Floating_canvas
+ The floating canvas is loosely handstitched in 
+****************************************************************************************************
+sewing_occupations
+ Bar_tack
+ Typical areas for bar tack stitches include 
+****************************************************************************************************
+sewing_occupations
+ Blind_stitch
+ Blind stitching hides stitching under folded edges; 
+****************************************************************************************************
+sewing_occupations
+ Cross-stitch
+ All cross-stitch fabrics are technically "evenweave" 
+****************************************************************************************************
+sewing_occupations
+ Topstitch
+ Topstitching is used most often on 
+****************************************************************************************************
+sewing_occupations
+ Neckline
+ These necklines accentuate the shoulders and 
+****************************************************************************************************
+sewing_occupations
+ Seam_allowance
+ Seam allowances can range from 1⁄4 inch 
+****************************************************************************************************
+sewing_occupations
+ Interfacing
+ This type of interfacing is known as 
+****************************************************************************************************
+sewing_occupations
+ Textile
+ Textiles are used in many traditional 
+****************************************************************************************************
+sewing_occupations
+ Needlecase
+ Needlecases are sometimes called by the 
+****************************************************************************************************
+sewing_occupations
+ Pin
+ Later, pins were also used to 
+****************************************************************************************************
+sewing_occupations
+ Mercery
+ Mercery initially referred to silk, linen, 
+****************************************************************************************************
+sewing_occupations
+ Pfaff
+ The PFAFF factory was expanded and 
+****************************************************************************************************
+healthcare_occupations
+ Endocrinologist
+ An endocrinologist needs extensive knowledge of 
+****************************************************************************************************
+healthcare_occupations
+ Geriatrician
+ Geriatricians have developed an expanded expertise 
+****************************************************************************************************
+healthcare_occupations
+ Gastroenterologist
+ Gastroenterologists perform a number of diagnostic 
+****************************************************************************************************
+healthcare_occupations
+ Nephrologist
+ Nephrologists may further sub-specialise in dialysis, 
+****************************************************************************************************
+healthcare_occupations
+ Neurologist
+ Neurologists are also asked to evaluate 
+****************************************************************************************************
+healthcare_occupations
+ Pulmonologist
+ As a result, many pulmonologists are 
+****************************************************************************************************
+healthcare_occupations
+ Pharmacist
+ Pharmacists approve prescriptions fulfilled by pharmaceutical 
+****************************************************************************************************
+healthcare_occupations
+ Pediatrician
+ Pediatricians often have to treat the 
+****************************************************************************************************
+healthcare_occupations
+ Physician_assistant
+ APA stands for aeromedical physician assistant and 
+****************************************************************************************************
+healthcare_occupations
+ Psychologist
+ The Dutch professional association of psychologists, 
+****************************************************************************************************
+healthcare_occupations
+ Athletic_trainer
+ Areas of expertise of certified athletic trainers 
+****************************************************************************************************
+healthcare_occupations
+ Cardiothoracic_surgeon
+ A cardiothoracic surgeon in the U.S. 
+****************************************************************************************************
+computer_occupations
+ A/B_testing
+ A/B testing is a user experience research 
+****************************************************************************************************
+computer_occupations
+ Systems_analyst
+ A computer systems analyst works to solve 
+****************************************************************************************************
+computer_occupations
+ Software_design
+ "Software design usually involves problem solving and 
+****************************************************************************************************
+computer_occupations
+ Solution_architecture
+ The Open Group defined solution architecture as: 
+****************************************************************************************************
+computer_occupations
+ User_research
+ User researcher aims to uncover the barriers 
+****************************************************************************************************
+computer_occupations
+ Web_developer
+ Web developers typically handle both server-side and 
+****************************************************************************************************
+film_and_television_occupations
+ Cartoonist
+ Cartoonists may work in many formats, 
+****************************************************************************************************
+film_and_television_occupations
+ Executive_producer
+ The executive producer is responsible for business 
+****************************************************************************************************
+film_and_television_occupations
+ Screenwriter
+ What separates a professional screenwriter from 
+****************************************************************************************************
+film_and_television_occupations
+ Stunt
+ Another well known vehicular stunt specialist 
+****************************************************************************************************
+film_and_television_occupations
+ News_program
+ A news program can include live or 
+****************************************************************************************************
+artistic_occupations
+ Baker
+ Bakers often joined the occupation through 
+****************************************************************************************************
+artistic_occupations
+ Chief_creative_officer
+ The power of chief creative officer can even 
+****************************************************************************************************
+artistic_occupations
+ Design_director
+ Design directors also require a much greater 
+****************************************************************************************************
+artistic_occupations
+ Hairstylist
+ Historical documentation is lacking regarding hairstylists 
+****************************************************************************************************
+artistic_occupations
+ Illustrator
+ A particularly popular medium with illustrators 
+****************************************************************************************************
+artistic_occupations
+ Pottery
+ Pottery is durable, and fragments, at 
+****************************************************************************************************
+artistic_occupations
+ Sculptor
+ Modern Zimbabwean sculptors in soapstone have 
+****************************************************************************************************
+artistic_occupations
+ Set_dresser
+ Set dressers are sometimes a part of 
+****************************************************************************************************
+artistic_occupations
+ Singer
+ The Performing World of the 
+****************************************************************************************************
+artistic_occupations
+ Web_designer
+ To create complex designs, many web designers 
+****************************************************************************************************
+artistic_occupations
+ Writer
+ For example, a writer's work may 
+****************************************************************************************************
+scientific_occupations
+ Engineering_technician
+ Engineering technicians are responsible for using the 
+****************************************************************************************************
+scientific_occupations
+ Engineering_technologist
+ UK engineering technologists have always been designated 
+****************************************************************************************************
+scientific_occupations
+ Computational_scientist
+ Computational scientists are typically researchers at academic 
+****************************************************************************************************
+scientific_occupations
+ Data
+ The prototypical example of metadata is 
+****************************************************************************************************
+scientific_occupations
+ Quantity
+ Quantity is a property that can 
+****************************************************************************************************
+scientific_occupations
+ Calculus
+ Calculus, originally called infinitesimal calculus or 
+****************************************************************************************************
+scientific_occupations
+ Demographic_marketer
+ Demographic marketers use demographics in marketing research, 
+****************************************************************************************************
+scientific_occupations
+ Statistician
+ A statistician is a person who 
+****************************************************************************************************
+scientific_occupations
+ Inventor
+ An inventor is a person who 
+****************************************************************************************************
+scientific_occupations
+ Psychologist
+ Academic psychologists educate higher-education students as 
+****************************************************************************************************
+scientific_occupations
+ National_Institutes_of_Health
+ The National Institutes of Health is the primary agency 
+****************************************************************************************************
+scientific_occupations
+ Biomedical_scientist
+ Some biomedical scientists also possess a medical 
+****************************************************************************************************
+scientific_occupations
+ Space_Shuttle
+ The first Space Shuttle mission, STS-1, would 
+****************************************************************************************************
+scientific_occupations
+ Space_Shuttle_Challenger
+ The Space Shuttle Challenger disaster was a fatal 
+****************************************************************************************************
+scientific_occupations
+ Ecologist
+ Hence, ecologists classify ecosystems hierarchically by 
+****************************************************************************************************
+scientific_occupations
+ Paleontologist
+ Paleontologists generally use approaches based on 
+****************************************************************************************************
+scientific_occupations
+ Anthropologist
+ Cyber anthropologists also study digital and 
+****************************************************************************************************
+scientific_occupations
+ Political_scientist
+ Political scientists can be found working in 
+****************************************************************************************************
+scientific_occupations
+ Historian
+ Historians are concerned with the continuous, 
+****************************************************************************************************
+scientific_occupations
+ Weather_forecasting
+ Weather forecasting is the application of science 
+****************************************************************************************************
+scientific_occupations
+ Natural_philosophy
+ Natural philosophy or philosophy of nature was 
+****************************************************************************************************
+entertainer_occupations
+ Beatboxer
+ It describes Beatboxers who incorporate other 
+****************************************************************************************************
+entertainer_occupations
+ Benshi
+ The actual practice of "benshi" is 
+****************************************************************************************************
+entertainer_occupations
+ Comedian
+ An example of an internet comedian 
+****************************************************************************************************
+entertainer_occupations
+ Dancer
+ Participatory dancers often all employ the 
+****************************************************************************************************
+entertainer_occupations
+ Itinerant_poet
+ An itinerant poet or strolling minstrel was 
+****************************************************************************************************
+entertainer_occupations
+ Kobzar
+ Kobzar performance was replaced with stylized 
+****************************************************************************************************
+entertainer_occupations
+ Lirnyk
+ Lirnyky were usually blind or had 
+****************************************************************************************************
+entertainer_occupations
+ Musician
+ Examples of a musician's possible skills include 
+****************************************************************************************************
+entertainer_occupations
+ Painter
+ For a painter, color is not 
+****************************************************************************************************
+entertainer_occupations
+ Singer
+ Some singers put videos on YouTube 
+****************************************************************************************************
+entertainer_occupations
+ Skomorokh
+ In the 18th century, skomorokh art 
+****************************************************************************************************
+dance_occupations
+ Corps_de_ballet
+ In ballet, the corps de ballet is the 
+****************************************************************************************************
+dance_occupations
+ Principal_dancer
+ A principal dancer is a dancer at 
+****************************************************************************************************
+dance_occupations
+ Dance_notation
+ Many dance notation systems are designed for 
+****************************************************************************************************
+dance_occupations
+ Dancer
+ Professional dancers must possess large amounts of 
+****************************************************************************************************
+dance_occupations
+ Dance
+ Primitive dance in ancient China was 
+****************************************************************************************************
+dance_occupations
+ Solo_dance
+ A solo dance is danced by an 
+****************************************************************************************************
+dance_occupations
+ Partner_dance
+ In traditional partner dances done within certain 
+****************************************************************************************************
+dance_occupations
+ Closed_position
+ In partner dancing, closed position is a 
+****************************************************************************************************
+dance_occupations
+ Line_dance
+ At least five line dances that are 
+****************************************************************************************************
+dance_occupations
+ Concert_dance
+ Concert dance is dance performed for an 
+****************************************************************************************************
+dance_occupations
+ Ecstatic_dance
+ Ecstatic dance is a form of dance 
+****************************************************************************************************
+dance_occupations
+ Folk_dance
+ Not all ethnic dances are folk 
+****************************************************************************************************
+dance_occupations
+ Street_dance
+ Examples of street dance include b-boying, which 
+****************************************************************************************************
+dance_occupations
+ War_dance
+ A war dance is a dance involving 
+****************************************************************************************************
+dance_occupations
+ Formation_dance
+ Formation dance is a style of ballroom 
+****************************************************************************************************
+dance_occupations
+ Belly_dance
+ The Turkish style of belly dance is 
+****************************************************************************************************
+dance_occupations
+ Jazz_dance
+ Theatrical jazz dance performed on the concert 
+****************************************************************************************************
+dance_occupations
+ Postmodern_dance
+ Narratives were rarely conveyed in postmodern dance, 
+****************************************************************************************************
+dance_occupations
+ Lead_and_follow
+ For the Lead and Follow to interact with 
+****************************************************************************************************
+dance_occupations
+ Pointe_technique
+ Pointe technique resulted from a desire for 
+****************************************************************************************************
+dance_occupations
+ African_dance
+ African dances are largely participatory, with spectators 
+****************************************************************************************************
+dance_occupations
+ Assyrian_folk_dance
+ Assyrian folk dances belong to five metric groups: 
+****************************************************************************************************
+dance_occupations
+ Dance_in_Cambodia
+ Dance in Cambodia consists of three main categories: 
+****************************************************************************************************
+dance_occupations
+ Dance_in_China
+ Dance in China is a highly varied art 
+****************************************************************************************************
+dance_occupations
+ European_dances
+ Since Medieval ages, European dances tend to 
+****************************************************************************************************
+dance_occupations
+ Dance_in_India
+ Dance in India comprises numerous styles of dances, 
+****************************************************************************************************
+dance_occupations
+ Faroese_dance
+ There are several Faroese Dance Associations in 
+****************************************************************************************************
+dance_occupations
+ Irish_dance
+ The complete guide to Irish 
+****************************************************************************************************
+dance_occupations
+ Japanese_traditional_dance
+ Japanese traditional dance has a long history, the 
+****************************************************************************************************
+dance_occupations
+ Korean_dance
+ A common form of Korean Dance, where 
+****************************************************************************************************
+dance_occupations
+ Folk_dance_of_Mexico
+ Folk dance of Mexico, commonly known as baile folklorico, 
+****************************************************************************************************
+dance_occupations
+ Ukrainian_dance
+ The history of Ukrainian dance diverges at 
+****************************************************************************************************
+dance_occupations
+ Dance_costume
+ A dance costume may be custom designed 
+****************************************************************************************************
+dance_occupations
+ Dance_etiquette
+ Dance etiquette is the set of conventional 
+****************************************************************************************************
+dance_occupations
+ Dance_technology
+ The terms dance technology and Dance and 
+****************************************************************************************************
+nursing_specialties
+ Advanced_practice_nurse
+ An advanced practice nurse is a nurse with 
+****************************************************************************************************
+nursing_specialties
+ Critical_care_nursing
+ Critical care nursing is the field of nursing 
+****************************************************************************************************
+nursing_specialties
+ Health_visitor
+ Health visitors are professional individuals engaged in 
+****************************************************************************************************
+nursing_specialties
+ Medical-surgical_nursing
+ Traditionally, medical-surgical nursing was an entry-level position 
+****************************************************************************************************
+nursing_specialties
+ Nursing_research
+ Nursing research is research that provides evidence 
+****************************************************************************************************
+nursing_specialties
+ Pediatric_nursing
+ Pediatric nurses as advocates.Journal of Pediatric Nursing, 
+****************************************************************************************************
+nursing_specialties
+ Telenursing
+ Telenursing is growing in many countries 
+****************************************************************************************************
+nursing_specialties
+ Wound_care
+ The history of wound care spans from 
+****************************************************************************************************
+nursing_specialties
+ Nursing
+ Those who attended a nursing university 
+****************************************************************************************************
+nursing_specialties
+ Nurse_licensure
+ Nurse licensure is the process by which 
+****************************************************************************************************
+nursing_specialties
+ Doctor_of_Nursing_Practice
+ The Doctor of Nursing Practice is a degree in 
+****************************************************************************************************
+nursing_specialties
+ Nursing_credentials_and_certifications
+ Nursing credentials and certifications are the various credentials and 
+****************************************************************************************************
+nursing_specialties
+ Travel_health_nursing
+ Travel health nursing is an emerging nursing specialty 
+****************************************************************************************************
+nursing_specialties
+ Nursing_Outcomes_Classification
+ The Nursing Outcomes Classification is a classification system 
+****************************************************************************************************
+writing_occupations
+ Blog
+ U.S. payouts related to blogging totaled 
+****************************************************************************************************
+writing_occupations
+ Commissioning_editor
+ In some companies commissioning editors are also 
+****************************************************************************************************
+writing_occupations
+ Copy_editor
+ Copy editors are still employed and needed 
+****************************************************************************************************
+writing_occupations
+ Infopreneur
+ Infopreneur is a neologism portmanteau derived from the 
+****************************************************************************************************
+writing_occupations
+ Literary_editor
+ A literary editor is an editor in 
+****************************************************************************************************
+writing_occupations
+ Manuscript_format
+ "Manuscript formatting depends greatly on the type 
+****************************************************************************************************
+writing_occupations
+ Writer
+ Some writers work from an oral 
+****************************************************************************************************
+professional_driver_types
+ Taxicab
+ Such taxicabs are variously called accessible 
+****************************************************************************************************
+professional_driver_types
+ Truck_driver
+ A truck driver  is a person 
+****************************************************************************************************
+engineering_branches
+ Civil_engineering
+ Its charter defined civil engineering as:the art 
+****************************************************************************************************
+engineering_branches
+ RNA
+ There are several kinds of RNA-dependent 
+****************************************************************************************************
+engineering_branches
+ Metal
+ The metal workers involved heated gold 
+****************************************************************************************************
+engineering_branches
+ Ceramic_engineering
+ Ceramic engineering, like many sciences, evolved from 
+****************************************************************************************************
+engineering_branches
+ Biomaterials
+ Immuno-informed biomaterials that direct the immune 
+****************************************************************************************************
+engineering_branches
+ Plastics_engineering
+ Plastics engineering encompasses plastics material and plastic 
+****************************************************************************************************
+engineering_branches
+ Ecological_engineering
+ \"Ecological engineering for sustainable agriculture in arid 
+****************************************************************************************************
+engineering_branches
+ Sanitary_engineering
+ Areas outside the purview of sanitary engineering 
+****************************************************************************************************
+engineering_branches
+ Mining_engineering
+ The fundamental subjects of mining engineering study 
+****************************************************************************************************
+engineering_branches
+ Highway_engineering
+ Technological advancements in highway engineering have improved 
+****************************************************************************************************
+engineering_branches
+ River_engineering
+ From the late 20th century, river engineering 
+****************************************************************************************************
+engineering_branches
+ Coastal_engineering
+ Coastal engineering is a branch of civil engineering 
+****************************************************************************************************
+engineering_branches
+ Computer_program
+ Computer programs also were manually input via 
+****************************************************************************************************
+engineering_branches
+ Computer_engineering
+ However, independent consultants who advertise Computer Engineering, 
+****************************************************************************************************
+engineering_branches
+ Microelectronics
+ Today, microelectronics design is largely aided by 
+****************************************************************************************************
+engineering_branches
+ Switchgear
+ High-voltage switchgear was invented at the 
+****************************************************************************************************
+engineering_branches
+ Optical_fibers
+ Optical fibers are used most often as 
+****************************************************************************************************
+engineering_branches
+ Laser
+ Commercial laser diodes emit at wavelengths 
+****************************************************************************************************
+engineering_branches
+ Helicopter
+ This allows the helicopter to take 
+****************************************************************************************************
+engineering_branches
+ Marine_engineering
+ Modern marine engineering dates back to the 
+****************************************************************************************************
+engineering_branches
+ Aeronautics
+ A companion to the physical 
+****************************************************************************************************
+engineering_branches
+ Agricultural_engineering
+ Agricultural engineering is the engineering of agricultural 
+****************************************************************************************************
+engineering_branches
+ Food_engineering
+ Specific food engineering activities include:
+
+drug/food products;
+design and 
+****************************************************************************************************
+engineering_branches
+ Natural_resources_engineering
+ Natural Resources Engineering, the sixth Abet accredited environmental 
+****************************************************************************************************
+engineering_branches
+ Mechatronics
+ Mechatronics, which is also called mechatronic 
+****************************************************************************************************
+engineering_branches
+ Biomedical_engineering
+ However, the Biomedical Engineering Society is, as 
+****************************************************************************************************
+engineering_branches
+ Electroencephalography
+ Electroencephalography is an electrophysiological monitoring method 
+****************************************************************************************************
+engineering_branches
+ Biomechanics
+ The interest in continuum biomechanics is 
+****************************************************************************************************
+engineering_branches
+ Artificial_kidney
+ Artificial kidney is often a synonym for 
+****************************************************************************************************
+engineering_branches
+ Biomaterial
+ Commonly, bioactivity of biomaterials is gauged 
+****************************************************************************************************
+engineering_branches
+ Neurorobotics
+ At its core, neurorobotics is based 
+****************************************************************************************************
+engineering_branches
+ Pharmaceutical_engineering
+ Pharmaceutical engineering is a branch of engineering 
+****************************************************************************************************
+engineering_branches
+ Rehabilitation_engineering
+ Rehabilitation engineering is the systematic application of 
+****************************************************************************************************
+engineering_branches
+ Tissue_engineering
+ While most definitions of tissue engineering cover 
+****************************************************************************************************
+engineering_branches
+ Food_and_biological_process_engineering
+ Food and biological process engineering is a discipline concerned with 
+****************************************************************************************************
+engineering_branches
+ Security
+ For example, visual signs of security 
+****************************************************************************************************
+engineering_branches
+ Escalator
+ In most escalator models manufactured after 
+****************************************************************************************************
+engineering_branches
+ Fire
+ However, this usually backfires, as reviewers 
+****************************************************************************************************
+engineering_branches
+ Wind_turbine
+ However, wind turbine wakes have been found 
+****************************************************************************************************
+engineering_branches
+ Data
+ The prototypical example of metadata is 
+****************************************************************************************************
+engineering_branches
+ Data_science
+ In contrast, data science deals with quantitative 
+****************************************************************************************************
+engineering_branches
+ Artificial_intelligence
+ Artificial Intelligence technologies enable coordination of sensors 
+****************************************************************************************************
+engineering_branches
+ Computer_vision
+ Three-Dimensional Computer Vision, A Geometric 
+****************************************************************************************************
+engineering_branches
+ Medical_image_computing
+ Medical image computing is an interdisciplinary field at 
+****************************************************************************************************
+engineering_branches
+ Industrial_engineering
+ In fact, the "Industrial" in Industrial engineering 
+****************************************************************************************************
+engineering_branches
+ Construction_engineering
+ In most cases construction engineering graduates look 
+****************************************************************************************************
+engineering_branches
+ Reliability_engineering
+ Software reliability engineering relies heavily on a 
+****************************************************************************************************
+engineering_branches
+ Combat_engineer
+ However, some nations have distinct combat engineering 
+****************************************************************************************************
+engineering_branches
+ Nanoengineering
+ Unlike early NanoEngineering programs, the first NanoEngineering 
+****************************************************************************************************
+engineering_branches
+ Nanoelectronics
+ The field of nanoelectronics aims to 
+****************************************************************************************************
+engineering_branches
+ Medical_physics
+ Medical physics of radiology involves medical imaging techniques 
+****************************************************************************************************
+engineering_branches
+ Web_engineering
+ Major arguments for Web engineering as a 
+****************************************************************************************************
+engineering_branches
+ Supply_chain_engineering
+ Supply chain engineering can be considered to include 
+****************************************************************************************************
+engineering_branches
+ Supply_chains
+ As a result, supply chains are often 
+****************************************************************************************************
+engineering_branches
+ Wayback_Machine
+ "The name Wayback Machine was chosen as 
+****************************************************************************************************
+engineering_branches
+ Transportation_engineering
+ The planning aspects of transportation engineering relate 
+****************************************************************************************************
+engineering_branches
+ Engineering_physics
+ In some institutions, an engineering physics major 
+****************************************************************************************************
+mental_health_occupations
+ Licensed_professional_counselor
+ In the US, licensed professional counselors provide mental health 
+****************************************************************************************************
+theatre_personnel
+ Playwright
+ A playwright or dramatist is a 
+****************************************************************************************************
+theatre_personnel
+ Dramaturge
+ The responsibilities of a dramaturge vary 
+****************************************************************************************************
+theatre_personnel
+ Costume_designer
+ The costume designer works alongside the director, 
+****************************************************************************************************
+theatre_personnel
+ Composer
+ Composers often express their works in 
+****************************************************************************************************
+theatre_personnel
+ Audio_engineer
+ In the music realm, an audio engineer 
+****************************************************************************************************
+theatre_personnel
+ Charge_artist
+ The charge artist's responsibilities include methods of 
+****************************************************************************************************
+theatre_personnel
+ Janitor
+ A janitor, custodian, porter, cleaner or 
+****************************************************************************************************
+theatre_personnel
+ Fly_crew
+ A fly crew is a group of 
+****************************************************************************************************
+theatre_personnel
+ Running_crew
+ Running crew, run crew or stage crew, 
+****************************************************************************************************
+theatre_personnel
+ Restoration_comedy
+ Today, Restoration comedy is again appreciated on 
+****************************************************************************************************
+theatre_personnel
+ Augustan_drama
+ Augustan drama can refer to the dramas 
+****************************************************************************************************
+theatre_personnel
+ Modernism
+ Postmodernism is essentially a centralized movement 
+****************************************************************************************************
+theatre_personnel
+ Opera
+ Exceptions include the English National Opera, 
+****************************************************************************************************
+theatre_personnel
+ Stagecraft
+ In its most basic form, stagecraft 
+****************************************************************************************************
+theatre_personnel
+ Technical_week
+ Technical week is the week prior to 
+****************************************************************************************************
+theatre_personnel
+ Scenic_designer
+ Scenic designers come from a variety of 
+****************************************************************************************************
+theatre_personnel
+ Musical_ensemble
+ A musical ensemble, also known as a 
+****************************************************************************************************
+corporate_titles
+ Chief_Administrative_Officer
+ A chief administrative officer is a top-tier executive 
+****************************************************************************************************
+corporate_titles
+ Chief_Brand_Officer
+ A chief brand officer is a relatively new 
+****************************************************************************************************
+corporate_titles
+ Chief_Gaming_Officer
+ A chief gaming officer is an executive position 
+****************************************************************************************************
+corporate_titles
+ Chief_Information_Officer
+ The role of chief information officer was first 
+****************************************************************************************************
+corporate_titles
+ Chief_Innovation_Officer
+ A chief innovation officer or chief technology innovation officer 
+****************************************************************************************************
+corporate_titles
+ Chief_Knowledge_Officer
+ A chief knowledge officer is an organizational leader, 
+****************************************************************************************************
+corporate_titles
+ Chief_Services_Officer
+ The chief services officer is a position at 
+****************************************************************************************************
+corporate_titles
+ Chief_Strategy_Officer
+ A chief strategy officer, or chief strategist, is 
+****************************************************************************************************
+corporate_titles
+ Chief_Technology_Officer
+ A chief technology officer, sometimes known as a 
+****************************************************************************************************
+corporate_titles
+ Chief_Visionary_Officer
+ A chief visionary officer or chief vision officer 
+****************************************************************************************************
+industrial_occupations
+ Arborist
+ An arborist, tree surgeon, or arboriculturist, 
+****************************************************************************************************
+industrial_occupations
+ Miller
+ Millers are often accused of associating 
+****************************************************************************************************
+industrial_occupations
+ Moldmaker
+ A moldmaker or molder is a 
+****************************************************************************************************
+industrial_occupations
+ Woodworkers
+ Many modern woodworkers choose to use 
+****************************************************************************************************
+railway_industry_occupations
+ Rail_transport
+ Rolling stock in a rail transport system 
+****************************************************************************************************
+railway_industry_occupations
+ Chief_Mechanical_Engineer
+ Chief mechanical engineer and locomotive superintendent are titles 
+****************************************************************************************************
+railway_industry_occupations
+ Revenue_Protection_Inspector
+ Revenue protection inspector or revenue protection officer is 
+****************************************************************************************************
+railway_industry_occupations
+ Ticket_inspector
+ A dedicated 'travelling ticket inspector' handled fare 
+****************************************************************************************************
+railway_industry_occupations
+ Platelayer
+ The term "platelayer" derives from the 
+****************************************************************************************************
+railway_industry_occupations
+ Navvy
+ The term "navvy" has also been 
+****************************************************************************************************
+railway_industry_occupations
+ Bridge_tender
+ For a railroad bridge, the bridge tender 
+****************************************************************************************************
+railway_industry_occupations
+ Locomotive_builder
+ Commercial locomotive builders were called upon when 
+****************************************************************************************************
