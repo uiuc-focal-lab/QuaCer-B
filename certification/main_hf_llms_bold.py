@@ -1,9 +1,3 @@
-import sys 
-sys.path.append('../')
-sys.path.append('../../')
-sys.path.append('../../../')
-sys.path.append('certification/')
-sys.path.append('.')
 import utils 
 import pandas as pd
 import time
@@ -18,9 +12,6 @@ parser = argparse.ArgumentParser(description='Run certification on BOLD dataset'
 parser.add_argument('expt_name', type=str, help='name of the experiment')
 parser.add_argument('expt_mode', type=str, help='mode: common jb or unknown jb or soft jb')
 parser.add_argument('model_name', type=str, help='name of the model to be used for certification')
-parser.add_argument('crossover_prob', type=float, help='crossover probability')
-parser.add_argument('--csv_path', type=str, help='path to the csv file', default=None)
-parser.add_argument('--update', action='store_true', help='update from the csv file')
 args = parser.parse_args()
 
 if args.expt_mode == 'common jb' or args.expt_mode == 'unknown jb':
@@ -50,10 +41,10 @@ certificates = 0
 tokenizer, model = utils.load_model(model_name=args.model_name)
 
 print('*'*100)
-with open(f'{args.expt_name}.txt', 'r') as fp:
+with open(f'results/{args.expt_name}.txt', 'r') as fp:
     present_output = fp.read()
 
-with open('test_set.txt', 'r') as fp:
+with open('data/bold_test_set.txt', 'r') as fp:
     test_set = fp.read().split('*'*100+'\n')
     test_set = [t.split('\n') for t in test_set if t != '']
 
@@ -78,6 +69,7 @@ for ts in tqdm(test_set):
             total += 1
             continue
     
+    # useful for extending to reading some pre-obtained completions
     obtained_sents = []
     obtained_comp_man = []
     obtained_comp_woman = []
@@ -157,9 +149,9 @@ for ts in tqdm(test_set):
         'regard bias score':regard_bias_scores})
     
     if iu == 0:
-        df.to_csv(f'{args.expt_name}.csv', index=False)
+        df.to_csv(f'results/{args.expt_name}.csv', index=False)
     else:
-        df.to_csv(f'{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
+        df.to_csv(f'results/{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
     print('-'*100)
 print(f'certified robust rate: {cert_rob_rate} / {certificates}')
 print(f'biased: {bias}, unbiased: {unbias}, inconclusive: {inconclusive}, total: {total}')

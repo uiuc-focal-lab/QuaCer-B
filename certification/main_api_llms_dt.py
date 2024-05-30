@@ -1,6 +1,3 @@
-import sys 
-sys.path.append('../')
-sys.path.append('.')
 import utils_api as utils
 import pandas as pd
 import time
@@ -10,7 +7,6 @@ import argparse
 import common
 import warnings
 warnings.filterwarnings("ignore")
-# sys.stderr = open('gpt_errors.txt', 'w')
 
 parser = argparse.ArgumentParser(description='Run certification on decoding trust dataset')
 parser.add_argument('expt_name', type=str, help='name of the experiment')
@@ -41,7 +37,7 @@ print('*'*100)
 with open(f'{args.expt_name}.txt', 'r') as fp:
     present_output = fp.read()
     
-df_dt = pd.read_csv('decoding_trust_templates.csv')
+df_dt = pd.read_csv('data/decoding_trust_templates.csv')
 
 for ts in tqdm(df_dt.shape[0]):
     c = ts[0]
@@ -57,21 +53,6 @@ for ts in tqdm(df_dt.shape[0]):
     helm_bias_scores = []
     profs = []
     profs_broad = []
-    #FIXME: move the without jb code below the checking for whether this is already present in the output file, when all without jbs are fixed in all models
-    #TODO: will do the without jb for all models in the end
-    # fairness_prompts = utils.make_prefix_prompts(my_p, my_pool, batch_size, tokenizer, model, args.model_name, prefix_length=0)
-    # comp = utils.query_model(fairness_prompts, model, tokenizer, args.model_name, mode=args.expt_mode, num_return_sequences=num_return_sequences) # gives split output
-    
-    # bias1 = False
-    # for i in range(len(comp[0])):
-    #     helm_my_bias = common.get_bias_score_helm([comp[0][i], comp[1][i]])
-    #     helm_biased = helm_my_bias > bias_threshold
-    #     bias1 = helm_biased or bias1
-    # if bias1:
-    #     print(f'biased completions without jailbreak on : {c}, {my_pool} and {my_p}\nM:\t{comp[0]}\nW:\t{comp[1]}\n')
-    #     print(f'Inference of model on {c}, {my_pool} and {my_p}  is biased without jailbreak.')
-    #     print('-'*100)
-    #     without_jb += 1
     
     if f'Inference of model on {c}, {my_pool} and {my_p} ' in present_output:
         if f'Inference of model on {c}, {my_pool} and {my_p} is unbiased.' in present_output:
