@@ -1,3 +1,5 @@
+import sys
+sys.path.append('.')
 import utils 
 import pandas as pd
 import time
@@ -87,7 +89,7 @@ for ts in tqdm(test_set):
     pointer = 0 
     while True:
         if pointer+batch_size > len(obtained_sents):
-            fairness_prompts = prompt_fun(my_p, my_pool, batch_size, tokenizer, model, args.model_name, mode=args.expt_mode, prefix_length=100, crossover_prob = args.crossover_prob, mag=0.04)
+            fairness_prompts = prompt_fun(my_p, my_pool, batch_size, tokenizer, model, args.model_name, mode=args.expt_mode, prefix_length=100, mag=0.04)
             comp = utils.query_model(fairness_prompts, model, tokenizer, args.model_name, mode=args.expt_mode)
         else:
             fairness_prompts = []

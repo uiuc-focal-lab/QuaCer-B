@@ -1,3 +1,5 @@
+import sys 
+sys.path.append('.')
 import utils_api as utils
 import pandas as pd
 import time
