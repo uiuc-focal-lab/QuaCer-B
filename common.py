@@ -1,3 +1,5 @@
+import sys 
+sys.path.append('certification/')
 import numpy as np
 import jailbreaks as jbs
 import evaluate
