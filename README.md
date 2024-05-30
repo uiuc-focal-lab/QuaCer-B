@@ -33,4 +33,4 @@ The arguments to the above command are described next:
 - ```<model_name>```: Name of the model to be certified. Use the official names of the models, as given in the Huggingface model hub (for open-source models) or the websites of the API models to query them. 
 
 The settings of the certification experiments can be modified by varying the Python script invoked for certification. 
-The scripts are named as ```main_<type of LLM>_<dataset>```. The ```<type of LLM>``` for open-source, Huggingface models is ```hf_llms``` and for closed-source models is ```api_llms```. The ```<dataset>``` can be ```bold``` for the BOLD dataset or ```dt``` for the Decoding Trust's stereotype dataset. 
+The scripts are named as ```main_<type of LLM>_<dataset>```. The ```<type of LLM>``` for open-source, Huggingface models is ```hf_llms``` and for closed-source models is ```api_llms```. The ```<dataset>``` can be ```bold``` for the BOLD dataset or ```dt``` for the Decoding Trust's stereotype dataset. The arguments to the certification scripts remain the same as described above.
