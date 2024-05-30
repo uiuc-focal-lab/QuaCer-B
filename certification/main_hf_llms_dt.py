@@ -1,6 +1,3 @@
-import sys 
-sys.path.append('../')
-sys.path.append('.')
 import utils 
 import pandas as pd
 import time
@@ -15,7 +12,6 @@ parser = argparse.ArgumentParser(description='Run certification on Decoding trus
 parser.add_argument('expt_name', type=str, help='name of the experiment')
 parser.add_argument('expt_mode', type=str, help='mode: common jb or unknown jb or soft jb')
 parser.add_argument('model_name', type=str, help='name of the model to be used for certification')
-parser.add_argument('--update', action='store_true', help='update the results file')
 args = parser.parse_args()
     
 if args.expt_mode == 'common jb' or args.expt_mode == 'unknown jb':
@@ -45,37 +41,15 @@ certificates = 0
 tokenizer, model = utils.load_model(model_name=args.model_name)
 
 print('*'*100)
-with open(f'{args.expt_name}.txt', 'r') as fp:
+with open(f'results/{args.expt_name}.txt', 'r') as fp:
     present_output = fp.read()
 
-df_dt = pd.read_csv('decoding_trust_templates.csv')
-if args.update:
-    df_ref = pd.read_csv(f'{args.expt_name}.csv')
-    df_ref.to_csv(f'{args.expt_name}_copy.csv', index=False)
-    df_ref['my_idx'] = df_ref.index
+df_dt = pd.read_csv('data/decoding_trust_templates.csv')
 
 for ts in tqdm(range(df_dt.shape[0])):
     c = df_dt.iloc[ts]['stereotype_template']
     
     print('Starting certification for:', c)
-    # get the appropriate chunk from the df_ref
-    if args.update:
-        chunk = df_ref[(df_ref['partial sentence'].str.contains(c.replace('[target_group]', '')))]
-        if chunk.empty:
-            stop_idx = -1
-            start_idx = 0
-            print('chunk empty')
-        else:
-            stop_idx = chunk['my_idx'].max()
-            start_idx = stop_idx - 1
-            while start_idx >= 0 and start_idx in chunk['my_idx'].values:
-                start_idx -= 1
-                # print('while')
-            start_idx += 1
-            print('start', start_idx, 'stop', stop_idx)
-    else:
-        start_idx = 0
-        stop_idx = -1
     helm_biased_total = 0
     attempts_total = 0
     t1 = time.time()
@@ -83,21 +57,6 @@ for ts in tqdm(range(df_dt.shape[0])):
     completions_woman = []
     sents = []
     helm_bias_scores = []
-    #FIXME: move the without jb code below the checking for whether this is already present in the output file, when all without jbs are fixed in all models
-    #TODO: will do the without jb for all models in the end
-    # fairness_prompts = prompt_fun(my_p, my_pool, batch_size, tokenizer, model, args.model_name, prefix_length=0)
-    # comp = utils.query_model(fairness_prompts, model, tokenizer, args.model_name, mode=args.expt_mode, num_return_sequences=num_return_sequences) # gives split output
-    
-    # bias1 = False
-    # for i in range(len(comp[0])):
-    #     helm_my_bias = common.get_bias_score_helm([comp[0][i], comp[1][i]])
-    #     helm_biased = helm_my_bias > bias_threshold
-    #     bias1 = helm_biased or bias1
-    # if bias1:
-    #     print(f'biased completions without jailbreak on : {c}, {my_pool} and {my_p}\nM:\t{comp[0]}\nW:\t{comp[1]}\n')
-    #     print(f'Inference of model on {c}, {my_pool} and {my_p}  is biased without jailbreak.')
-    #     print('-'*100)
-    #     without_jb += 1
     
     if f'Inference of model on {c} ' in present_output:
         if f'Inference of model on {c} is unbiased.' in present_output:
@@ -112,18 +71,22 @@ for ts in tqdm(range(df_dt.shape[0])):
             inconclusive += 1
             total += 1
             continue
-       
-    pointer = start_idx  
+    
+    obtained_sents = []
+    obtained_comp_man = []
+    obtained_comp_woman = []
+    
+    pointer = 0 
     while True:
-        if pointer > stop_idx:
+        if pointer+batch_size > len(obtained_sents):
             fairness_prompts = prompt_fun(c, batch_size, tokenizer, model, args.model_name, mode=args.expt_mode, prefix_length=100, mag=0.04)
             comp = utils.query_model(fairness_prompts, model, tokenizer, args.model_name, mode=args.expt_mode)
         else:
             fairness_prompts = []
             comp = []
             for i in range(batch_size):
-                fairness_prompts.extend([df_ref['partial sentence'].iloc[pointer+i], df_ref['partial sentence'].iloc[pointer+i]])
-                comp.extend([df_ref['completion_black'].iloc[pointer+i], df_ref['completion_white'].iloc[pointer+i]])
+                fairness_prompts.extend([obtained_sents[pointer+i], obtained_sents[pointer+i]])
+                comp.extend([obtained_comp_man[pointer+i], obtained_comp_woman[pointer+i]])
             pointer += batch_size
         
         for i in range(batch_size):
@@ -174,10 +137,10 @@ for ts in tqdm(range(df_dt.shape[0])):
         'completion_white':completions_woman, 
         'Bias score':helm_bias_scores,})
     if ts == 0:
-        df.to_csv(f'{args.expt_name}.csv', index=False)
+        df.to_csv(f'results/{args.expt_name}.csv', index=False)
     else:
-        df.to_csv(f'{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
+        df.to_csv(f'results/{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
     print('-'*100)
 print(f'certified robust rate: {cert_rob_rate} / {certificates}')
-print(f'biased: {bias}, unbiased: {unbias}, inconclusive: {inconclusive}, total: {total}') #FIXME: removed for now , without jb: {without_jb}
+print(f'biased: {bias}, unbiased: {unbias}, inconclusive: {inconclusive}, total: {total}') 
 print('*'*100)
