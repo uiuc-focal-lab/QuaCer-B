@@ -21,6 +21,7 @@ We currently support the following models. We are working towards extending to m
 - Closed-source models (with API access):
   - Gemini-Pro
   - GPT
+  - Claude
 
 To certify an open-source model for the BOLD dataset, run the following command, by replacing the placeholders with the appropriate values:
 ```python certification/main_hf_llms_bold.py <expt_name> <expt_mode> <model_name>```
