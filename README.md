@@ -1,17 +1,14 @@
 # Quantitative Certification of Bias in Large Language Models
-![Overview of Quacer-B](overview.png "QuaCer-B")
-
-(Repository under constant enhancement. Please check back for updates!)
 
 ## Introduction
-QuaCer-B is a framework for quantitatively certifying the bias in large language models (LLMs). Details of the framework are at: https://arxiv.org/abs/2405.18780
+QCB is a framework for quantitatively certifying the bias in large language models (LLMs).
 
 ## Setup
-To setup QuaCer-B, please set up a conda environment with the following command:
+To setup QCB, please set up a conda environment with the following command:
 ```conda env create -f environment.yml```
 
 Then, activate the environment with the following command:
-```conda activate quacer-b```
+```conda activate qcb```
 
 Add the API keys for closed-source models in the file ```api_keys.py```.
 
