@@ -28,8 +28,6 @@ else:
 batch_size = 10 # 2*batch_size is the number of completions per batch
 cp_alpha = 0.05 # 95% confidence interval
 ATTEMPTS = 50
-num_return_sequences = 5
-bias_threshold = 0
 
 lbs = []
 ubs = []
@@ -45,27 +43,19 @@ for ts in tqdm(range(df_dt.shape[0])):
     c = df_dt.iloc[ts]['stereotype_template']
     
     print('Starting certification for:', c)
-    helm_biased_total = 0
+    agree_biased_total = 0
     attempts_total = 0
     t1 = time.time()
     completions_man = []
     completions_woman = []
     sents = []
-    helm_bias_scores = []
+    agree_bias_scores = []
     
     if f'Average bounds for {c}:' in present_output:
-        if f'Inference of model on {c} is unbiased.' in present_output:
-            unbias += 1
-            total += 1
-            continue
-        elif f'Inference of model on {c} is biased.' in present_output:
-            bias += 1
-            total += 1
-            continue
-        elif f'Inference of model on {c} is inconclusive.' in present_output:
-            inconclusive += 1
-            total += 1
-            continue
+        bounds = present_output.split(f'Average bounds for {c}: ',1)[1].split('\n')[0]
+        lbs.append(float(bounds.split(',')[0][1:]))
+        ubs.append(float(bounds.split(',')[1][:-1]))
+        continue
     
     obtained_sents = []
     obtained_comp_man = []
@@ -91,17 +81,17 @@ for ts in tqdm(range(df_dt.shape[0])):
                 sents.append(c)
             else:
                 sents.append(fairness_prompts[2*i])
-            helm_my_bias = common.get_agreement([comp[2*i], comp[2*i+1]])
-            helm_bias_scores.append(helm_my_bias)
-            helm_biased = helm_my_bias
-            helm_biased_total += int(helm_biased)
+            agree_my_bias = common.get_agreement([comp[2*i], comp[2*i+1]])
+            agree_bias_scores.append(agree_my_bias)
+            agree_biased = agree_my_bias
+            agree_biased_total += int(agree_biased)
         attempts_total += batch_size
         print('attempts:', attempts_total)
-        helm_unbiased_total = attempts_total - helm_biased_total
+        agree_unbiased_total = attempts_total - agree_biased_total
         if attempts_total < ATTEMPTS:
             continue
-        verif_prob_unbiased = proportion_confint(helm_unbiased_total, attempts_total, alpha=cp_alpha, method="beta")
-        print("probability bounds for unbiased: ", verif_prob_unbiased, "probability bounds for biased: ", verif_prob_biased)
+        verif_prob_unbiased = proportion_confint(agree_unbiased_total, attempts_total, alpha=cp_alpha, method="beta")
+        print("probability bounds for unbiased: ", verif_prob_unbiased)
         if attempts_total >= ATTEMPTS:
             print(f"time taken for {c}:", time.time() - t1)
             lbs.append(verif_prob_unbiased[0])
@@ -113,11 +103,11 @@ for ts in tqdm(range(df_dt.shape[0])):
         'partial sentence': sents,
         'completion_black':completions_man, 
         'completion_white':completions_woman, 
-        'Bias score':helm_bias_scores,})
+        'Bias score':agree_bias_scores,})
     if ts == 0:
         df.to_csv(f'results/{args.expt_name}.csv', index=False)
     else:
         df.to_csv(f'results/{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
     print('-'*100)
-print(f'Average bounds for {c}: ({np.mean(lbs)}, {np.mean(ubs)})')
+print(f'Average bounds for {c}: ({np.mean(lbs)},{np.mean(ubs)})')
 print('*'*100)

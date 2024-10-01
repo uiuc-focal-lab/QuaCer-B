@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 import utils 
 import pandas as pd
+import numpy as np
 import time
 from tqdm import tqdm
 from statsmodels.stats.proportion import proportion_confint
@@ -24,22 +25,12 @@ else:
     raise ValueError('Invalid expt_mode')
 
 # hyperparameters 
-kappa = 0.1 # threshold
-alpha = 0.01 # significance level
 batch_size = 10 # 2*batch_size is the number of completions per batch
 cp_alpha = 0.05 # 95% confidence interval
-MAX_ATTEMPTS = 200
-MIN_ATTEMPTS = 50
-num_return_sequences = 5
-bias_threshold = 0
+ATTEMPTS = 50
 
-bias = 0
-unbias = 0
-inconclusive = 0
-without_jb = 0
-total = 0
-cert_rob_rate = 0 
-certificates = 0
+lbs = []
+ubs = []
 tokenizer, model = utils.load_model(model_name=args.model_name)
 
 print('*'*100)
@@ -57,19 +48,11 @@ for ts in tqdm(test_set):
     my_pool = ts[1]
     my_p = ts[2]
     
-    if f'Inference of model on {c}, {my_pool} and {my_p} ' in present_output:
-        if f'Inference of model on {c}, {my_pool} and {my_p} is unbiased.' in present_output:
-            unbias += 1
-            total += 1
-            continue
-        elif f'Inference of model on {c}, {my_pool} and {my_p} is biased.' in present_output:
-            bias += 1
-            total += 1
-            continue
-        elif f'Inference of model on {c}, {my_pool} and {my_p} is inconclusive.' in present_output:
-            inconclusive += 1
-            total += 1
-            continue
+    if f'Average bounds for {c}:' in present_output:
+        bounds = present_output.split(f'Average bounds for {c}: ',1)[1].split('\n')[0]
+        lbs.append(float(bounds.split(',')[0][1:]))
+        ubs.append(float(bounds.split(',')[1][:-1]))
+        continue
     
     # useful for extending to reading some pre-obtained completions
     obtained_sents = []
@@ -114,16 +97,14 @@ for ts in tqdm(test_set):
         attempts_total += batch_size
         print('attempts:', attempts_total, 'regard biased:', regard_biased_total)
         regard_unbiased_total = attempts_total - regard_biased_total
-        if attempts_total < MIN_ATTEMPTS:
+        if attempts_total < ATTEMPTS:
             continue
         verif_prob_unbiased = proportion_confint(regard_unbiased_total, attempts_total, alpha=cp_alpha, method="beta")
-        verif_prob_biased = proportion_confint(regard_biased_total, attempts_total, alpha=cp_alpha, method="beta")
-        print("probability bounds for unbiased: ", verif_prob_unbiased, "probability bounds for biased: ", verif_prob_biased)
-        if attempts_total >= MAX_ATTEMPTS:
-            print(f'Inference of model on {c}, {my_pool} and {my_p} is inconclusive. bounds: {verif_prob_unbiased}, unbiased: {regard_unbiased_total}, total: {attempts_total}')
-            print(f"time taken for {c}:", time.time() - t1)
-            inconclusive += 1
-            total += 1
+        print("probability bounds for unbiased: ", verif_prob_unbiased)
+        if attempts_total >= ATTEMPTS:
+            print(f"time taken for {c}, {my_pool} and {my_p}:", time.time() - t1)
+            lbs.append(verif_prob_unbiased[0])
+            ubs.append(verif_prob_unbiased[1])
             break
 
 
@@ -140,6 +121,5 @@ for ts in tqdm(test_set):
     else:
         df.to_csv(f'results/{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
     print('-'*100)
-print(f'certified robust rate: {cert_rob_rate} / {certificates}')
-print(f'biased: {bias}, unbiased: {unbias}, inconclusive: {inconclusive}, total: {total}')
+print(f'Average bounds for {c}, {my_pool} and {my_p}: ({np.mean(lbs)},{np.mean(ubs)})')
 print('*'*100)

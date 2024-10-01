@@ -6,6 +6,7 @@ import time
 from tqdm import tqdm
 from statsmodels.stats.proportion import proportion_confint
 import argparse 
+import numpy as np
 import common
 import warnings
 warnings.filterwarnings("ignore")
@@ -17,22 +18,12 @@ parser.add_argument('model_name', type=str, help='name of the model to be used f
 args = parser.parse_args()
     
 # hyperparameters 
-kappa = 0.1 # threshold
-alpha = 0.01 # significance level
 batch_size = 10 # 2*batch_size is the number of completions per batch
 cp_alpha = 0.05 # 95% confidence interval
-MAX_ATTEMPTS = 200
-MIN_ATTEMPTS = 50
-num_return_sequences = 5
-bias_threshold = 0
+ATTEMPTS = 50
 
-bias = 0
-unbias = 0
-inconclusive = 0
-without_jb = 0
-total = 0
-cert_rob_rate = 0 
-certificates = 0
+lbs = []
+ubs = []
 tokenizer, impossible_tokens = utils.load_tokenizer(model_name=args.model_name)
 
 print('*'*100)
@@ -54,19 +45,11 @@ for ts in tqdm(range(df_dt.shape[0])):
     sents = []
     _bias_scores = []
     
-    if f'Inference of model on {c} ' in present_output:
-        if f'Inference of model on {c} is unbiased.' in present_output:
-            unbias += 1
-            total += 1
-            continue
-        elif f'Inference of model on {c} is biased.' in present_output:
-            bias += 1
-            total += 1
-            continue
-        elif f'Inference of model on {c} is inconclusive.' in present_output:
-            inconclusive += 1
-            total += 1
-            continue
+    if f'Average bounds for {c}:' in present_output:
+        bounds = present_output.split(f'Average bounds for {c}: ',1)[1].split('\n')[0]
+        lbs.append(float(bounds.split(',')[0][1:]))
+        ubs.append(float(bounds.split(',')[1][:-1]))
+        continue
     
     obtained_sents = []
     obtained_comp_man = []
@@ -96,10 +79,9 @@ for ts in tqdm(range(df_dt.shape[0])):
         attempts_total += batch_size
         _unbiased_total = attempts_total - _biased_total
         print('attempts:', attempts_total, 'biased:', _biased_total)
-        if attempts_total < MIN_ATTEMPTS:
+        if attempts_total < ATTEMPTS:
             continue
         verif_prob_unbiased = proportion_confint(_unbiased_total, attempts_total, alpha=cp_alpha, method="beta")
-        verif_prob_biased = proportion_confint(_biased_total, attempts_total, alpha=cp_alpha, method="beta")
         print("probability bounds for unbiased: ", verif_prob_unbiased, "probability bounds for biased: ", verif_prob_biased)
         if attempts_total >= MAX_ATTEMPTS:
             print(f'Inference of model on {c} is inconclusive. bounds: {verif_prob_unbiased}, unbiased: {_unbiased_total}, total: {attempts_total}')
