@@ -82,12 +82,11 @@ for ts in tqdm(range(df_dt.shape[0])):
         if attempts_total < ATTEMPTS:
             continue
         verif_prob_unbiased = proportion_confint(_unbiased_total, attempts_total, alpha=cp_alpha, method="beta")
-        print("probability bounds for unbiased: ", verif_prob_unbiased, "probability bounds for biased: ", verif_prob_biased)
-        if attempts_total >= MAX_ATTEMPTS:
-            print(f'Inference of model on {c} is inconclusive. bounds: {verif_prob_unbiased}, unbiased: {_unbiased_total}, total: {attempts_total}')
+        print("probability bounds for unbiased: ", verif_prob_unbiased)
+        if attempts_total >= ATTEMPTS:
             print(f"time taken for {c}:", time.time() - t1)
-            inconclusive += 1
-            total += 1
+            lbs.append(verif_prob_unbiased[0])
+            ubs.append(verif_prob_unbiased[1])
             break
 
 
@@ -102,6 +101,5 @@ for ts in tqdm(range(df_dt.shape[0])):
     else:
         df.to_csv(f'results/{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
     print('-'*100)
-print(f'certified robust rate: {cert_rob_rate} / {certificates}')
-print(f'biased: {bias}, unbiased: {unbias}, inconclusive: {inconclusive}, total: {total}')
+print(f'Average bounds for {c}: ({np.mean(lbs)},{np.mean(ubs)})')
 print('*'*100)

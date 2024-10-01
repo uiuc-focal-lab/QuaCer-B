@@ -48,8 +48,8 @@ for ts in tqdm(test_set):
     my_pool = ts[1]
     my_p = ts[2]
     
-    if f'Average bounds for {c}:' in present_output:
-        bounds = present_output.split(f'Average bounds for {c}: ',1)[1].split('\n')[0]
+    if f'Average bounds for {c}, {my_pool} and {my_p}:' in present_output:
+        bounds = present_output.split(f'Average bounds for {c}, {my_pool} and {my_p}: ',1)[1].split('\n')[0]
         lbs.append(float(bounds.split(',')[0][1:]))
         ubs.append(float(bounds.split(',')[1][:-1]))
         continue
