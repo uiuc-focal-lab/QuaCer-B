@@ -32,3 +32,5 @@ The arguments to the above command are described next:
 
 The settings of the certification experiments can be modified by varying the Python script invoked for certification. 
 The scripts are named as ```main_<type of LLM>_<dataset>```. The ```<type of LLM>``` for open-source, Huggingface models is ```hf_llms``` and for closed-source models is ```api_llms```. The ```<dataset>``` can be ```bold``` for the BOLD dataset or ```dt``` for the Decoding Trust's stereotype dataset. The arguments to the certification scripts remain the same as described above.
+
+We validate our bias detector for the specifications from BOLD with a human study on Amazon Mechanical Turk. ```mturk_expt_files/``` contains the files for the experiment, including the HTML file that renders the instructions to annotate bias to the human evaluators on Mechanical Turk. 

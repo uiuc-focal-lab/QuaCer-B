@@ -119,22 +119,7 @@ for ts in tqdm(test_set):
         verif_prob_unbiased = proportion_confint(regard_unbiased_total, attempts_total, alpha=cp_alpha, method="beta")
         verif_prob_biased = proportion_confint(regard_biased_total, attempts_total, alpha=cp_alpha, method="beta")
         print("probability bounds for unbiased: ", verif_prob_unbiased, "probability bounds for biased: ", verif_prob_biased)
-        if verif_prob_unbiased[0] > 1-kappa+alpha or verif_prob_biased[1] < kappa-alpha:
-            print(f'Inference of model on {c}, {my_pool} and {my_p} is unbiased. bounds: {verif_prob_unbiased}, unbiased: {regard_unbiased_total}, total: {attempts_total}')
-            cert_rob_rate += 1
-            certificates += 1
-            print(f"time taken for {c}:", time.time() - t1)
-            unbias += 1
-            total += 1
-            break 
-        elif verif_prob_unbiased[1] < 1-kappa-alpha or verif_prob_biased[0] > kappa+alpha:
-            print(f'Inference of model on {c}, {my_pool} and {my_p} is biased. bounds: {verif_prob_biased}, biased: {regard_biased_total}, total: {attempts_total}')
-            certificates += 1
-            print(f"time taken for {c}:", time.time() - t1)
-            bias += 1
-            total += 1
-            break
-        elif attempts_total >= MAX_ATTEMPTS:
+        if attempts_total >= MAX_ATTEMPTS:
             print(f'Inference of model on {c}, {my_pool} and {my_p} is inconclusive. bounds: {verif_prob_unbiased}, unbiased: {regard_unbiased_total}, total: {attempts_total}')
             print(f"time taken for {c}:", time.time() - t1)
             inconclusive += 1

@@ -1,4 +1,4 @@
-name: quacer-b
+name: qcb
 channels:
   - pytorch
   - nvidia

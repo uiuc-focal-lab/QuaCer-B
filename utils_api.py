@@ -6,10 +6,12 @@ import numpy as np
 import sys
 import common
 import tiktoken
+import anthropic
 sys.path.append('certification/')
 import google.generativeai as genai
 genai.configure(api_key=api_keys.GAPI_KEY)
 gemini_model = genai.GenerativeModel('gemini-pro')
+# sys.stderr = open('results/gpt_errors.txt', 'w')
 
 def get_nonascii_toks(tokenizer, vocab_size):
     def is_ascii(s):
@@ -108,7 +110,7 @@ def load_tokenizer(model_name):
         tokenizer = tiktoken.encoding_for_model(model_name)
         vocab_size = tokenizer.n_vocab
     else:
-        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Llama-2-7b-chat-hf', padding_side='left', token=common.hf_token)
+        tokenizer = AutoTokenizer.from_pretrained('meta-llama/Llama-2-7b-chat-hf', padding_side='left', token=api_keys.HF_TOKEN)
         if tokenizer.pad_token is None:
             tokenizer.add_special_tokens({'pad_token': '[PAD]'})
         vocab_size = tokenizer.vocab_size
@@ -127,6 +129,9 @@ def query_model(prompts: list[str], model_name, do_sample=True, top_k=10,
                          max_length=max_length, temperature=temperature))
             elif 'gemini' in model_name.lower():
                 resp.append(query_gemini_model(prompts[i], do_sample=do_sample, top_k=top_k,
+                         max_length=max_length, temperature=temperature))
+            elif 'claude' in model_name.lower():
+                resp.append(query_claude_model(prompts[i], do_sample=do_sample, top_k=top_k,
                          max_length=max_length, temperature=temperature))
             else:
                 raise ValueError('Invalid model name!')
@@ -173,6 +178,7 @@ def query_gemini_model(prompt, do_sample=True, top_k=10,
         if not hasattr(response, 'text'):
             raise Exception('No text attribute in response')
         response = response.text
+        time.sleep(0.1)
     except:
         time.sleep(20)
         try:
@@ -181,6 +187,35 @@ def query_gemini_model(prompt, do_sample=True, top_k=10,
             print(exp)
             exit(1)
     return response
+
+def query_claude_model(prompt, do_sample=True, top_k=10,
+                         max_length=100, temperature=1.0, **kwargs):
+    client = anthropic.Anthropic(api_key=api_keys.CLAUDE_API_KEY)
+    def query(prompt):
+        message = client.messages.create(
+            model="claude-3-5-sonnet-20240620",
+            max_tokens=max_length,
+            temperature=temperature,
+            messages=[{"role": "user", "content": prompt}],
+            top_k=top_k
+        )
+        return message
+    try:
+        # print('generating completion')
+        chat = query(prompt)
+        # print('generated completion')
+    except Exception as exp: 
+        # if timeout then wait for 20 seconds and try again
+        time.sleep(20)
+        try: # try once more
+            chat = query(prompt)
+        except Exception as exp:
+            print(exp)
+            exit(1)
+    reply = chat.content[0].text
+    # print(reply)
+    # exit(0)
+    return reply
 
 def query_gpt_model(prompt, model_name, do_sample=True, top_k=10,
                         max_length=100, temperature=1.0, **kwargs):
@@ -192,7 +227,7 @@ def query_gpt_model(prompt, model_name, do_sample=True, top_k=10,
                 temperature=temperature,
             )
         return chat
-    client = openai.OpenAI(api_key=api_keys.OAI_API_KEY)
+    client = openai.OpenAI(api_key=api_keys.API_KEY)
     messages = [{"role": "user", "content": prompt}]
     try:
         # print('generating completion')
