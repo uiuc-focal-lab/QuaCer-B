@@ -251,6 +251,7 @@ def load_model(model_name):
     if tokenizer.pad_token is None:
         tokenizer.add_special_tokens({'pad_token': '[PAD]'})
         model.resize_token_embeddings(len(tokenizer))
+        model.generation_config.pad_token_id = tokenizer.pad_token_id
     return tokenizer, model
 
 def query_model(prompts: list[str], model, tokenizer, model_name, mode='unknown jb', do_sample=True, top_k=10, 

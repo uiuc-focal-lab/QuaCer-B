@@ -15,6 +15,7 @@ parser = argparse.ArgumentParser(description='Run certification on BOLD dataset'
 parser.add_argument('expt_name', type=str, help='name of the experiment')
 parser.add_argument('expt_mode', type=str, help='mode: common jb or unknown jb or soft jb')
 parser.add_argument('model_name', type=str, help='name of the model to be used for certification')
+parser.add_argument('--topk', type=int, default=10, help='temperature for sampling')
 args = parser.parse_args()
 
 if args.expt_mode == 'common jb' or args.expt_mode == 'unknown jb':
@@ -34,10 +35,10 @@ ubs = []
 tokenizer, model = utils.load_model(model_name=args.model_name)
 
 print('*'*100)
-with open(f'results/{args.expt_name}.txt', 'r') as fp:
+with open(f'new_results/regard/ablations/{args.expt_name}.txt', 'r') as fp:
     present_output = fp.read()
 
-with open('data/bold_test_set.txt', 'r') as fp:
+with open('certification/ablations/ablation_test_set.txt', 'r') as fp:
     test_set = fp.read().split('*'*100+'\n')
     test_set = [t.split('\n') for t in test_set if t != '']
 
@@ -49,7 +50,7 @@ for ts in tqdm(test_set):
     my_p = ts[2]
     
     if f'Average bounds for {c}, {my_pool} and {my_p}:' in present_output:
-        bounds = present_output.split(f'Average bounds for {c}, {my_pool} and {my_p}: ',1)[1].split('\n')[0]
+        bounds = present_output.split(f'Average bounds for {c}, {my_pool} and {my_p}: ',1)[1].split('\n')[0].strip()
         lbs.append(float(bounds.split(',')[0][1:]))
         ubs.append(float(bounds.split(',')[1][:-1]))
         continue
@@ -73,7 +74,11 @@ for ts in tqdm(test_set):
     while True:
         if pointer+batch_size > len(obtained_sents):
             fairness_prompts = prompt_fun(my_p, my_pool, batch_size, tokenizer, model, args.model_name, mode=args.expt_mode, prefix_length=100, mag=0.04)
-            comp = utils.query_model(fairness_prompts, model, tokenizer, args.model_name, mode=args.expt_mode)
+            if args.topk == 1:
+                do_sample=False
+            else:
+                do_sample=True
+            comp = utils.query_model(fairness_prompts, model, tokenizer, args.model_name, mode=args.expt_mode, top_k=args.topk, do_sample=do_sample)
         else:
             fairness_prompts = []
             comp = []
@@ -102,7 +107,7 @@ for ts in tqdm(test_set):
         verif_prob_unbiased = proportion_confint(regard_unbiased_total, attempts_total, alpha=cp_alpha, method="beta")
         print("probability bounds for unbiased: ", verif_prob_unbiased)
         if attempts_total >= ATTEMPTS:
-            print(f'Average bounds for {c}, {my_pool} and {my_p}: {verif_prob_unbiased}')
+            print(f"Average bounds for {c}, {my_pool} and {my_p}: ", verif_prob_unbiased)
             print(f"time taken for {c}, {my_pool} and {my_p}:", time.time() - t1)
             lbs.append(verif_prob_unbiased[0])
             ubs.append(verif_prob_unbiased[1])
@@ -118,9 +123,9 @@ for ts in tqdm(test_set):
         'regard bias score':regard_bias_scores})
     
     if iu == 0:
-        df.to_csv(f'results/{args.expt_name}.csv', index=False)
+        df.to_csv(f'new_results/regard/ablations/{args.expt_name}.csv', index=False)
     else:
-        df.to_csv(f'results/{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
+        df.to_csv(f'new_results/regard/ablations/{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
     print('-'*100)
 print(f'Average bounds: ({np.mean(lbs)},{np.mean(ubs)})')
 print('*'*100)
