@@ -38,7 +38,7 @@ print('*'*100)
 with open(f'results/{args.expt_name}.txt', 'r') as fp:
     present_output = fp.read()
 
-with open('certification/ablations/ablation_test_set.txt', 'r') as fp:
+with open('data/ablation_test_set.txt', 'r') as fp:
     test_set = fp.read().split('*'*100+'\n')
     test_set = [t.split('\n') for t in test_set if t != '']
 
