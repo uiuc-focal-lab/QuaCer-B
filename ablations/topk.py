@@ -35,7 +35,7 @@ ubs = []
 tokenizer, model = utils.load_model(model_name=args.model_name)
 
 print('*'*100)
-with open(f'new_results/regard/ablations/{args.expt_name}.txt', 'r') as fp:
+with open(f'results/{args.expt_name}.txt', 'r') as fp:
     present_output = fp.read()
 
 with open('certification/ablations/ablation_test_set.txt', 'r') as fp:
@@ -123,9 +123,9 @@ for ts in tqdm(test_set):
         'regard bias score':regard_bias_scores})
     
     if iu == 0:
-        df.to_csv(f'new_results/regard/ablations/{args.expt_name}.csv', index=False)
+        df.to_csv(f'results/{args.expt_name}.csv', index=False)
     else:
-        df.to_csv(f'new_results/regard/ablations/{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
+        df.to_csv(f'results/{args.expt_name}.csv', index=False, mode='a') # save results to csv file    
     print('-'*100)
 print(f'Average bounds: ({np.mean(lbs)},{np.mean(ubs)})')
 print('*'*100)
