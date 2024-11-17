@@ -11,6 +11,7 @@ Then, activate the environment with the following command:
 ```conda activate qcb```
 
 Add the API keys for closed-source models in the file ```api_keys.py```.
+Make a folder to store the certification results as ```mkdir results/```.
 
 ## Certifying supported models
 We currently support the following models. We are working towards extending to models. 
